@@ -1,0 +1,113 @@
+@font-face {
+  font-family: League Spartan;
+  src: url(https://fonts.google.com/specimen/League+Spartan);
+  font-size: 15px;
+}
+.header {
+  margin: 0;
+  padding: 0;
+}
+img {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.job-listing {
+  display: flex; 
+  gap: 10px;
+  flex-wrap: wrap;
+  font-family: 'Spartan', sans-serif; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  width: 90%;
+  padding: 1em;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 4px 8px hsl(180, 29%, 50%);
+}
+
+
+
+body {
+  background-color: hsl(180, 52%, 96%);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.position {
+  color:  hsl(180, 14%, 20%);
+}
+.details {
+    display: flex; 
+    gap: 10px;
+    flex-wrap: wrap; 
+    justify-content: flext-end;
+    margin-left: auto;
+    margin-right: 0;
+    
+}
+
+.top{
+  display: inline-flex;
+  align-items: center;
+}
+
+.locAndTime {
+  display: flex;
+  color: hsl(180, 8%, 52%);
+}
+
+.locAndTime p::after {
+  content: "•";
+  margin: 0 10px;
+}
+
+.locAndTime p:last-child::after {
+  content: "";
+}
+.new {
+  display: inline-flex; /* Using flexbox for vertical and horizontal centering */
+  align-items: center; /* Vertically centers the text */
+  justify-content: center; /* Horizontally centers the text */
+  background-color: hsl(180, 29%, 50%);
+  color: white;
+  padding: 2px 10px; /* Smaller padding for reduced height */
+  border-radius: 12px; /* Rounded corners */
+  margin-left: 10px; /* Space between the text and the next element */
+  font-weight: bold;
+  font-size: 10px; /* Smaller font size for less height */
+  height: 20px; /* Fixed height for the div to make it less tall */
+}
+.detail {
+  display: inline-flex; /* Using flexbox for vertical and horizontal centering */
+  align-items: center; /* Vertically centers the text */
+  justify-content: center; /* Horizontally centers the text */
+  background-color: hsl(180, 52%, 96%);
+  color: hsl(180, 29%, 50%);
+  padding: 2px 10px; /* Smaller padding for reduced height */
+  border-radius: 3px; /* Rounded corners */
+  margin-left: 10px; /* Space between the text and the next element */
+  font-weight: bold;
+  font-size: 10px; /* Smaller font size for less height */
+  height: 20px; /* Fixed height for the div to make it less tall */
+}
+
+
+.featured {
+  background-color: hsl(180, 14%, 20%);
+  color: white;
+  display: inline-flex; /* Using flexbox for vertical and horizontal centering */
+  align-items: center; /* Vertically centers the text */
+  justify-content: center; /* Horizontally centers the text */
+  padding: 2px 10px; /* Smaller padding for reduced height */
+  border-radius: 12px; /* Rounded corners */
+  margin-left: 10px; /* Space between the text and the next element */
+  font-weight: bold;
+  font-size: 10px; /* Smaller font size for less height */
+  height: 20px; /* Fixed height for the div to make it less tall */
+}
+.company {
+  color: hsl(180, 29%, 50%);
+}
