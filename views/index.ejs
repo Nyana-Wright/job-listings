@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title> 
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<div class="header">
+    <img src='./images/bg-header-desktop.svg' alt="header">
+</div>
+<body>
+    <form id = "searchForm" method="GET" action="/search">
+        <input type="text" name="query" id="searchInput" placeholder="Search..." 
+        <% if (query) { %>
+            value = "<%= query %>"
+        <% } %>
+        require>
+        <button type="submit">Search</button>
+    </form>
+      
+    <div id="jobList">
+        <% data.forEach((elt) => { %>
+            <%- include('partials/jobListing', {elt:elt}) %> <!-- Include the partial for each job listing -->
+        <% }); %>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+
+            $('#searchInput').on('input', function() {
+                const query = $(this).val();
+
+                $.ajax({
+                    url: '/search',
+                    method: 'GET',
+                    data: { query: query },
+                    success: function(html) {
+                        $('#jobList').html(html);
+                    },
+                    error: function(err) {
+                        console.error('Error:', err);
+                    }
+                });
+            });
+
+            $('#searchForm').on('submit', function(e) {
+                e.preventDefault();
+
+                const query = $('#searchInput').val();
+                $.ajax({
+                    url: '/search',
+                    method: 'GET',
+                    data: { query: query },
+                    success: function(html) {
+                        $('#jobList').html(html);
+                    },
+                    error: function(err) {
+                        console.error('Error:', err);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

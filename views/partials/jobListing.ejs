@@ -1,0 +1,34 @@
+<div class="job-listing">
+    <div class="logo">
+        <img src="<%= elt.logo %>" alt="Company Logo">
+    </div>
+    <div class="role-info">
+        <div class="top">
+            <p class="company"><%= elt.company %></p>
+            <% if (elt.new) { %>
+                <span class="new">NEW!</span>
+            <% } %>
+            <% if (elt.featured) { %>
+                <span class="featured">FEATURED</span>
+            <% } %>
+        </div>
+        <div class="position">
+            <strong><%= elt.position %></strong>
+        </div>
+        <div class="locAndTime">
+            <p><%= elt.postedAt %></p>
+            <p><%= elt.contract %></p>
+            <p><%= elt.location %></p>
+        </div>
+    </div>
+    <div class="details">
+        <p class = "detail"><%= elt.role %></p>
+        <p class = "detail"><%= elt.level %></p>
+        <% elt.tools.forEach((tool) => { %>
+            <p class = "detail"><%= tool %></p>
+        <% }); %>
+        <% elt.languages.forEach((lang) => { %>
+            <p class = "detail"><%= lang %></p>
+        <% }); %>
+    </div>
+</div>
